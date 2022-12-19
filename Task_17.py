@@ -2,7 +2,7 @@ import random
 
 
 def write_file(user_list):
-    with open('Index_Position.txt', 'w', encoding='utf-8') as f:
+    with open('file.txt', 'w', encoding='utf-8') as f:
         if len(user_list):
             for i in user_list:
                 f.writelines(str(i)+'\n')
@@ -10,7 +10,7 @@ def write_file(user_list):
 
 
 def read_file():
-    with open('Index_Position.txt', 'r', encoding='utf-8') as f:
+    with open('file.txt', 'r', encoding='utf-8') as f:
         result = []
         for i in f:
             result.append(int(i))
@@ -29,7 +29,7 @@ def index_list(count_index):
     elif user_str == '2':
         user_str = []
         for i in range(count_index//2):
-            user_str.append(random.randint(0, count_index))
+            user_str.append(random.randint(0, count_index-1))
     write_file(user_str)
 
 
